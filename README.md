@@ -8,17 +8,23 @@ After this lesson, students will be able to:
 - ... set up a local authentication strategy with Passport.js
 
 ##Setup
+After forking and cloning, you will want to checkout our **annotated** branch.
+This is the branch with the dependencies added to our package file and hints
+in the various files we need to create and modify. If you'd like more of a
+challenge, **master** has no hints and requires you to add your own
+dependencies.
+
 Before we can do anything, we need to install our dependencies:
 
 ```bash
 $ npm install
-$ npm install passport --save
-$ npm install passport-local --save
-$ npm install bcrypt --save
 ```
 
+Take a look at our `package.json` to see what modules we need for what
+we're setting out to do in this lesson.
+
 ###What are those modules for?
-Passport is the core module for authentication here. It is organized in
+`passport` is the core module for authentication here. It is organized in
 a modular manner, not tied to any particular style of authentication, instead
 importing strategy modules. Passport is capable of everything from standard
 username-and-password (local) authentication to authentication with Google,
@@ -34,6 +40,10 @@ secure storage.
 purpose is to take a low-entropy (not very random) input, such as a password,
 and produce a high-entropy output suitable for use as an encryption key. We
 will use it to hash our passwords for secure storage.
+
+`sequelize`, `pg`, and `pg-hstore` have to do with our relational database.
+We're using Sequelize as our ORM and our database is Postgres, so we install
+the relevant packages. We will not use `pg` or `pg-hstore` directly.
 
 ##Code-along
 We'll be doing this as a code-along, where I will make periodic commits to
