@@ -46,3 +46,23 @@ Create the file and directory, then proceed.
 We will be using this file to configure `passport`. You will be provided an
 initial state of comments stating what needs to be done.
 
+###app.js
+We will need to edit our app.js in order to mount Passport's middleware for
+user sessions. Note that it depends on session middleware already being mounted
+on our app or router; it must be `use`d **after** we `use` our session
+middleware, and before we `use` our routes.
+
+###routes/index.js
+Here, we have to create two routes:
+- a login route, which uses `passport.authenticate` to pass the user's
+credentials on to our authentication strategy
+- a register route, where we don't use Passport at all, but add a row to
+our Users table.
+
+Note that we need body-parsing middleware on both of these routes for user
+credentials.
+
+###models/*
+This will essentially be a review of Sequelize. We'll make our user model
+and export it as part of a module containing all of our models for convenience.
+
