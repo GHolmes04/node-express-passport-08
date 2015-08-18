@@ -40,3 +40,9 @@ We'll be doing this as a code-along, where I will make periodic commits to
 the **solved** branch of this repository. You will be able to follow my commits
 on that branch to review this material in the future.
 
+###lib/passport.js
+Create the file and directory, then proceed.
+
+We will be using this file to configure `passport`. You will be provided an
+initial state of comments stating what needs to be done.
+
